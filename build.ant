@@ -1,0 +1,5 @@
+<project basedir="." name="DBCache"> 
+	<property name="CommonBuild" value="../ant/common.ant"/> 
+	<property name="this.project" value="${ant.project.name}"/> 
+	<ant target="libjar" antfile="${CommonBuild}" inheritAll="true"/>
+</project>
