@@ -54,6 +54,7 @@ public class TableWrapper {
 			s.setObject( i++, d == null || d.isNull() ? null : d.getValue() );
 		}
 		s.executeUpdate();
+		s.close();
 	}
 
 	
@@ -64,7 +65,9 @@ public class TableWrapper {
 		for ( ColumnData d : RowUtils.getUpdateValues( row, table ) ) {
 				s.setObject( i++, d == null || d.isNull() ? null : d.getValue() );
 		}
+		System.out.println( s.toString() );
 		s.executeUpdate();
+		s.close();
 	}
 	
 	public static void deleteRow( Table table, Row row, Connection c ) throws SQLException, MissingPKsException {
@@ -75,6 +78,7 @@ public class TableWrapper {
 			s.setObject( i++, d == null || d.isNull() ? null : d.getValue() );
 		}
 		s.executeUpdate();
+		s.close();
 	}
 	
 	public static Row getRow( Table table, Row row, Connection c ) throws SQLException, MissingPKsException {
