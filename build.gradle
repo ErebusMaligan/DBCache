@@ -1,4 +1,13 @@
 apply plugin: 'java'
 
+ext {
+	includeLibs = true
+	copyLibs = true
+	deployedProjDir = "deployed/Tools"
+	deployedLibDir = "./libs"
+	libDest = "deployed/Tools/libs"
+	jarPathPrefix = "./libs/"
+}
+
 //The dependencies and ext block MUST come before this script call - otherwise the ext block in common won't know how to set some properties
 apply from: '../gradle/stdlib.gradle'
